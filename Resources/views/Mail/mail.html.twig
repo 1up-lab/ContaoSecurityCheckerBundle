@@ -1,0 +1,33 @@
+<html>
+<head>
+</head>
+<body>
+<h1>{{ 'mail.headline' | trans }}</h1>
+
+<p>
+{% if isVulnerable %}
+    {{ 'mail.body.failed' | trans({'%host%': request.getSchemeAndHttpHost()}) | raw }}
+    <ul>
+    {% for vulnerability in vulnerabilities %}
+        <li>
+        {{ vulnerability.name }} ({{ vulnerability.version }}):
+        <ul>
+        {% for advisory in vulnerability.advisories %}
+            <li>
+            {{ advisory.title }}
+                {% if advisory.link is defined %}
+                    [<a href="{{ advisory.link }}">{{ 'mail.see_more' | trans }}</a>]
+                {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    {{ 'mail.body.ok' | trans({'%host%': request.getSchemeAndHttpHost()}) | raw }}
+{% endif %}
+</p>
+
+</body>
+</html>

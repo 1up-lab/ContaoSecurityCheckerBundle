@@ -1,0 +1,19 @@
+
+services:
+    oneup_security_checker.log_listener:
+        class: Oneup\Bundle\SecurityCheckerBundle\EventListener\LogListener
+        tags:
+            - { name: kernel.event_listener, event: oneup_security_checker.audit, method: onSecurityAudit }
+    oneup_security_checker.notification_listener:
+        class: Oneup\Bundle\SecurityCheckerBundle\EventListener\NotificationListener
+        tags:
+            - { name: kernel.event_listener, event: oneup_security_checker.audit, method: onSecurityAudit }
+        arguments:
+            - '@mailer'
+            - '@translator'
+            - '@templating'
+            - '@request_stack'
+            - '%oneup_security_checker.enable_notifications%'
+            - '%oneup_security_checker.notification_email%'
+            - '%oneup_security_checker.suppress_manual_audits%'
+            - '%oneup_security_checker.notify_only_failed_audits%'

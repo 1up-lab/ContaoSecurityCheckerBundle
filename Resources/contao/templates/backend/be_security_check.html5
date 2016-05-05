@@ -1,0 +1,61 @@
+<div class="tl_security_checker">
+    <h2 class="sub_headline"><?php echo $this->headline; ?></h2>
+
+    <?php if ($this->hasRunOnce): ?>
+    <div class="tl_message">
+        <?php if (!$this->isVulnerable): ?>
+        <p class="tl_confirm" style="margin-bottom:9px;"><?php echo $this->auditOk; ?><sup><strong>*</strong></sup></p>
+        <?php else: ?>
+        <p class="tl_error" style="margin-bottom:9px;"><?php echo $this->auditFailed; ?><sup><strong>*</strong></sup></p>
+
+        <table class="tl_listing">
+            <?php foreach ($this->vulnerabilities as $vulnerability): ?>
+            <tr>
+                <td colspan="2" class="tl_folder_tlist">
+                    <?php echo $vulnerability['name']; ?>
+                    <span class="tl_gray"><?php echo $vulnerability['version']; ?></span>
+                </td>
+            </tr>
+            <?php foreach ($vulnerability['advisories'] as $advisory): ?>
+            <tr class="even">
+                <td class="tl_file_list">
+                    <?php if (strlen($advisory['cve']) > 0): ?>
+                    <span class="tl_gray"><?php echo $advisory['cve']; ?></span>
+                    <?php endif; ?>
+                    <?php echo $advisory['title']; ?>
+                </td>
+                <td class="tl_file_list tl_right_nowrap">
+                    <a href="<?php echo $advisory['link']; ?>" target="_blank" class="show"><img src="system/themes/flexible/images/show.gif" width="14" height="16" alt="Open"></a>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+            <?php endforeach; ?>
+        </table>
+        <?php endif; ?>
+    </div>
+    <?php else: ?>
+    <div class="tl_message">
+        <p class="tl_error"><?php echo $this->noAuditFound; ?><sup><strong>*</strong></sup></p>
+    </div>
+    <?php endif; ?>
+
+    <div class="tl_message" style="margin-top:0;margin-bottom:9px;">
+        <p class="tl_help"><sup><strong>*</strong></sup> <?php echo html_entity_decode($this->disclaimer); ?></p>
+    </div>
+
+    <form action="" class="tl_form" method="post">
+        <div class="tl_formbody_edit">
+            <input type="hidden" name="run" value="1" />
+            <input type="hidden" name="REQUEST_TOKEN" value="<?php echo $this->requestToken; ?>" />
+        </div>
+        <div class="tl_submit_container">
+            <input type="submit" class="tl_submit" value="<?php echo $this->runSecurityCheck; ?>">
+
+            <?php if ($this->hasRunOnce): ?>
+            <div class="last-checked">
+                <p class="tl_gray"><?php echo $this->lastCheckedLabel ?>: <?php echo $this->lastChecked ?></p>
+            </div>
+            <?php endif; ?>
+        </div>
+    </form>
+</div>

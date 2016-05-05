@@ -1,0 +1,19 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs 
+.buildpath
+.project
+.settings/
+.build/
+.idea/
+nbproject/
+
+# Composer
+vendor/
+composer.lock
+composer.phar
+
+# Transifex
+/.tx/

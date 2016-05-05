@@ -1,0 +1,14 @@
+<?xml version="1.0" ?><xliff version="1.1">
+  <file>
+    <body>
+      <trans-unit id="MOD.security_checker.0">
+        <source>Security Checker</source>
+        <target>Security Checker</target>
+      </trans-unit>
+      <trans-unit id="MOD.security_checker.1">
+        <source>Check your Contao and extensions against an open vulnerability database.</source>
+        <target>Prüfen Sie Ihre Contao-Installation und Extensions auf veröffentlichte Sicherheitsprobleme.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

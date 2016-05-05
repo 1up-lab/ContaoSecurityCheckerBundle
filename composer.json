@@ -1,0 +1,35 @@
+{
+  "name":"oneup/contao-security-checker-bundle",
+  "description":"This check works by comparing the composer.lock against an open vulnerability database. A clean check does not mean there are absolutely no security problems whatsoever.",
+  "keywords":["contao", "security", "extensions", "modules", "check"],
+  "type":"contao-bundle",
+  "homepage":"http://1up.io",
+  "license":"MIT",
+  "authors":[
+    {
+      "name":"David Greminger",
+      "email":"dg@1up.io",
+      "homepage":"http://1up.io",
+      "role":"Developer"
+    },
+    {
+      "name":"Jim Schmid",
+      "email":"js@1up.io",
+      "homepage":"http://1up.io",
+      "role":"Developer"
+    }
+  ],
+  "require": {
+    "php":">=5.4",
+    "contao/core-bundle":"^4.0",
+    "sensiolabs/security-checker": "~3.0",
+    "doctrine/cache": "^1.6"
+
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~3.7"
+  },
+  "autoload":     {
+    "psr-4": { "Oneup\\Bundle\\SecurityCheckerBundle\\": "" }
+  }
+}

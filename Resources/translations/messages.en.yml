@@ -1,0 +1,17 @@
+headline: Security Checker
+disclaimer: This check works by comparing the &lt;code&gt;composer.lock&lt;/code&gt; against an open vulnerability database. A clean check does not mean there are absolutely no security problems whatsoever.
+run_security_check: Run security audit
+audit:
+    ok: All systems secure.
+    not_found: No audit created yet!
+    failed: Security escalation found!
+last_checked: Last checked
+mail:
+    headline: Hello Admin
+    see_more: See more
+    subject:
+        ok: '[%host%]: Security audit succeeded!'
+        failed: '[%host%]: Security audit reveiled potential vulnerabilites!'
+    body:
+        ok: 'A security audit was performed on <a href="%host%">%host%</a> which succeeded without warnings.'
+        failed: 'A security audit was performed on <a href="%host%">%host%</a> which reveiled the following problems:'

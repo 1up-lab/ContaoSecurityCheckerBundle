@@ -1,0 +1,27 @@
+
+services:
+    oneup_security_checker.security_checker:
+        class: Oneup\Bundle\SecurityCheckerBundle\Checker\SecurityChecker
+        arguments:
+            - '@event_dispatcher'
+            - '@oneup_security_checker.base_security_checker'
+            - '@oneup_security_checker.audit_cache'
+
+    oneup_security_checker.base_security_checker:
+        class: SensioLabs\Security\SecurityChecker
+        public: false
+
+    oneup_security_checker.audit_cache:
+        class: Doctrine\Common\Cache\FilesystemCache
+        arguments: ['%kernel.cache_dir%/doctrine/cache/file_system']
+        public: false
+
+    oneup.security_checker.audit_cron_job:
+        class: Oneup\Bundle\SecurityCheckerBundle\Checker\CronJobChecker
+        arguments: ['@oneup_security_checker.security_checker', '%kernel.root_dir%']
+
+    oneup_security_checker.security_checker.command:
+        class: SensioLabs\Security\Command\SecurityCheckerCommand
+        tags:
+        - { name: console.command }
+        arguments: ['@oneup_security_checker.base_security_checker']

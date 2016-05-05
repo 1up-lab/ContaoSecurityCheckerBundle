@@ -1,0 +1,17 @@
+headline: Security Checker
+disclaimer: Dieser Check vergleicht das &lt;code&gt;composer.lock&lt;/code&gt; Ihres Projekts mit einer quelloffenen Sicherheitslückendatenbank. Keine Fehler bedeuten daher nicht zwingend, dass keine Probleme existieren.
+run_security_check: Security-Audit starten
+audit:
+    ok: Keine Sicherheitsprobleme gefunden.
+    not_found: Bisher wurde noch kein Audit gestartet!
+    failed: Ein Sicherheitsproblem wurde gefunden!
+last_checked: Letzter Prüfung
+mail:
+    headline: Hallo Administrator
+    see_more: Details
+    subject:
+        ok: '[%host%]: Security-Audit ohne Warnung abgeschlossen!'
+        failed: '[%host%]: Ein Security-Audit hat potentielle Sicherheitsprobleme gefunden!'
+    body:
+        ok: 'Ein Security-Audit wurde auf <a href="%host%">%host%</a> durchgeführt und ohne Warnung abgeschlossen.'
+        failed: 'Ein Security-Audit wurde auf <a href="%host%">%host%</a> durchgeführt und hat die folgenden potentiellen Sicherheitslücken gefunden:'
