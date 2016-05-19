@@ -1,7 +1,7 @@
 {
   "name":"oneup/contao-security-checker-bundle",
   "description":"This check works by comparing the composer.lock against an open vulnerability database. A clean check does not mean there are absolutely no security problems whatsoever.",
-  "keywords":["contao", "security", "extensions", "modules", "check"],
+  "keywords":["contao", "security", "bundle", "modules", "extensions", "check"],
   "type":"contao-bundle",
   "homepage":"http://1up.io",
   "license":"MIT",
