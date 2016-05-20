@@ -72,7 +72,7 @@ oneup_security_checker:
     notification_email: your@email.here
     cron_cycle: daily
     enable_cron: true
-
+```
 
 Upgrade Notes
 -------------
