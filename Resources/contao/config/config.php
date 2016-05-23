@@ -1,8 +1,8 @@
 <?php
 
 $GLOBALS['BE_MOD']['system']['security_checker'] = [
-    'icon'          => 'bundles/oneupcontaosecuritychecker/images/security-checker.png',
-    'stylesheet'    => 'bundles/oneupcontaosecuritychecker/css/security-checker.css',
+    'icon'          => 'bundles/oneupsecuritychecker/images/security-checker.png',
+    'stylesheet'    => 'bundles/oneupsecuritychecker/css/security-checker.css',
     'callback'      => 'Oneup\Bundle\SecurityCheckerBundle\Module\Backend\SecurityCheckerModule',
 ];
 
