@@ -22,7 +22,7 @@
   "require": {
     "php":">=5.4",
     "contao/core-bundle":"^4.0",
-    "sensiolabs/security-checker": "~3.0 | ~4.0",
+    "sensiolabs/security-checker": "~3.0|~4.0",
     "doctrine/cache": "^1.6"
 
   },
