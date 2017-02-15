@@ -25,7 +25,7 @@
                     <?php echo $advisory['title']; ?>
                 </td>
                 <td class="tl_file_list tl_right_nowrap">
-                    <a href="<?php echo $advisory['link']; ?>" target="_blank" class="show"><img src="system/themes/flexible/images/show.gif" width="14" height="16" alt="Open"></a>
+                    <a href="<?php echo $advisory['link']; ?>" target="_blank" class="show"><img src="system/themes/flexible/icons/show.svg" width="14" height="16" alt="Open"></a>
                 </td>
             </tr>
             <?php endforeach; ?>
