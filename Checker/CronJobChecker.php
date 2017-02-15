@@ -1,6 +1,6 @@
 <?php
 
-namespace Oneup\Bundle\SecurityCheckerBundle\Checker;
+namespace Oneup\Bundle\ContaoSecurityCheckerBundle\Checker;
 
 class CronJobChecker
 {

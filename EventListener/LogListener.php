@@ -1,9 +1,9 @@
 <?php
 
-namespace Oneup\Bundle\SecurityCheckerBundle\EventListener;
+namespace Oneup\Bundle\ContaoSecurityCheckerBundle\EventListener;
 
 use Contao\System;
-use Oneup\Bundle\SecurityCheckerBundle\Event\SecurityAuditEvent;
+use Oneup\Bundle\ContaoSecurityCheckerBundle\Event\SecurityAuditEvent;
 
 class LogListener
 {

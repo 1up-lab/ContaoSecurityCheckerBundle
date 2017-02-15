@@ -1,6 +1,6 @@
 <?php
 
-namespace Oneup\Bundle\SecurityCheckerBundle\DependencyInjection;
+namespace Oneup\Bundle\ContaoSecurityCheckerBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -10,7 +10,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('oneup_security_checker');
+        $rootNode = $treeBuilder->root('oneup_contao_security_checker');
 
         $rootNode
             ->children()

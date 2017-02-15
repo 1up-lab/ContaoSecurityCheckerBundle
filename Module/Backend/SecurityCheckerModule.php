@@ -1,14 +1,14 @@
 <?php
 
-namespace Oneup\Bundle\SecurityCheckerBundle\Module\Backend;
+namespace Oneup\Bundle\ContaoSecurityCheckerBundle\Module\Backend;
 
 use Contao\BackendModule;
 use Contao\BackendTemplate;
 use Contao\Input;
 use Contao\Config;
 use Symfony\Component\Translation\TranslatorInterface;
-use Oneup\Bundle\SecurityCheckerBundle\Audit\Audit;
-use Oneup\Bundle\SecurityCheckerBundle\Checker\SecurityChecker;
+use Oneup\Bundle\ContaoSecurityCheckerBundle\Audit\Audit;
+use Oneup\Bundle\ContaoSecurityCheckerBundle\Checker\SecurityChecker;
 
 class SecurityCheckerModule extends BackendModule
 {
@@ -45,7 +45,7 @@ class SecurityCheckerModule extends BackendModule
         $objTemplate = new BackendTemplate('be_security_check');
 
         /** @var SecurityChecker $securityChecker */
-        $securityChecker = $this->container->get('oneup_security_checker.security_checker');
+        $securityChecker = $this->container->get('oneup_contao_security_checker.security_checker');
         $securityChecker->addLockFile($this->container->get('kernel')->getRootDir().'/../composer.lock');
 
         // Init Audit.

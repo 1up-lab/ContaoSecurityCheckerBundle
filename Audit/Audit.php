@@ -1,6 +1,6 @@
 <?php
 
-namespace Oneup\Bundle\SecurityCheckerBundle\Audit;
+namespace Oneup\Bundle\ContaoSecurityCheckerBundle\Audit;
 
 class Audit
 {

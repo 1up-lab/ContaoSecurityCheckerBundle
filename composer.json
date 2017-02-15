@@ -19,6 +19,12 @@
       "role":"Developer"
     }
   ],
+  "support":{
+    "email":"hello@1up.io",
+    "issues":"https://github.com/1up-lab/ContaoSecurityCheckerBundle/issues",
+    "irc":"irc://irc.freenode.org/contao.dev",
+    "source":"https://github.com/1up-lab/ContaoSecurityCheckerBundle"
+  },
   "require": {
     "php":">=5.4",
     "contao/core-bundle":"^4.2",

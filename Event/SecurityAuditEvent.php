@@ -1,13 +1,13 @@
 <?php
 
-namespace Oneup\Bundle\SecurityCheckerBundle\Event;
+namespace Oneup\Bundle\ContaoSecurityCheckerBundle\Event;
 
-use Oneup\Bundle\SecurityCheckerBundle\Audit\Audit;
+use Oneup\Bundle\ContaoSecurityCheckerBundle\Audit\Audit;
 use Symfony\Component\EventDispatcher\Event;
 
 class SecurityAuditEvent extends Event
 {
-    const NAME = 'oneup_security_checker.audit';
+    const NAME = 'oneup_contao_security_checker.audit';
 
     protected $audit;
 

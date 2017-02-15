@@ -28,11 +28,11 @@ Documentation
 
 Perform the following steps to install and use the basic functionality of the OneupUploaderBundle:
 
-* Download OneupSecurityCheckerBundle using Composer
+* Download the ContaoSecurityCheckerBundle using Composer
 * Enable the bundle
 * Configure the bundle
 
-### Step 1: Download the OneupSecurityCheckerBundle
+### Step 1: Download the ContaoSecurityCheckerBundle
 
 Add OneupUploaderBundle to your composer.json using the following construct:
 
@@ -52,7 +52,7 @@ public function registerBundles()
 {
     $bundles = [
         // ...
-        new Oneup\Bundle\SecurityCheckerBundle\OneupSecurityCheckerBundle(),
+        new Oneup\Bundle\ContaoSecurityCheckerBundle\OneupContaoSecurityCheckerBundle(),
     ];
 }
 ```
@@ -65,7 +65,7 @@ Add this little configuration to your `app/config/config.yml` and adjust it to y
 # app/config/config.yml
 
 # Oneup SecurityChecker configuration
-oneup_security_checker:
+oneup_contao_security_checker:
     enable_notifications: true
     suppress_manual_audits: false
     notify_only_failed_audits: true

@@ -1,6 +1,6 @@
 <?php
 
-namespace Oneup\Bundle\SecurityCheckerBundle\DependencyInjection;
+namespace Oneup\Bundle\ContaoSecurityCheckerBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
@@ -8,7 +8,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-class OneupSecurityCheckerExtension extends Extension
+class OneupContaoSecurityCheckerExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
@@ -17,7 +17,7 @@ class OneupSecurityCheckerExtension extends Extension
         $config = $processor->processConfiguration($configuration, $configs);
 
         foreach ($config as $key => $value) {
-            $container->setParameter('oneup_security_checker.'.$key, $value);
+            $container->setParameter('oneup_contao_security_checker.'.$key, $value);
         }
 
         $loader = new YamlFileLoader(

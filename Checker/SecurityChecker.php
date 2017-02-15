@@ -1,9 +1,9 @@
 <?php
 
-namespace Oneup\Bundle\SecurityCheckerBundle\Checker;
+namespace Oneup\Bundle\ContaoSecurityCheckerBundle\Checker;
 
-use Oneup\Bundle\SecurityCheckerBundle\Audit\Audit;
-use Oneup\Bundle\SecurityCheckerBundle\Event\SecurityAuditEvent;
+use Oneup\Bundle\ContaoSecurityCheckerBundle\Audit\Audit;
+use Oneup\Bundle\ContaoSecurityCheckerBundle\Event\SecurityAuditEvent;
 use Doctrine\Common\Cache\CacheProvider;
 use SensioLabs\Security\SecurityChecker as BaseSecurityChecker;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
@@ -41,14 +41,14 @@ class SecurityChecker
 
     public function hasRunOnce()
     {
-        return $this->cache->fetch('oneup.security_checker.audit');
+        return $this->cache->fetch('oneup.contao_security_checker.audit');
     }
 
     public function cacheAudit(Audit $audit)
     {
         $strAudit = json_encode($audit->getVulnerabilities());
-        $this->cache->save('oneup.security_checker.audit', $strAudit);
-        $this->cache->save('oneup.security_checker.updated', new \DateTime());
+        $this->cache->save('oneup.contao_security_checker.audit', $strAudit);
+        $this->cache->save('oneup.contao_security_checker.updated', new \DateTime());
     }
 
     public function getCachedAudit()
@@ -57,7 +57,7 @@ class SecurityChecker
             throw new \BadMethodCallException('No audit cache found.');
         }
 
-        $strAudit = $this->cache->fetch('oneup.security_checker.audit');
+        $strAudit = $this->cache->fetch('oneup.contao_security_checker.audit');
         $vulnerabilites = json_decode($strAudit, true);
 
         return new Audit($vulnerabilites);
@@ -72,7 +72,7 @@ class SecurityChecker
             throw new \BadMethodCallException('No audit cache found.');
         }
 
-        return $this->cache->fetch('oneup.security_checker.updated');
+        return $this->cache->fetch('oneup.contao_security_checker.updated');
     }
 
     public function addLockFile($path)

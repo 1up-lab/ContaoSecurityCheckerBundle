@@ -1,13 +1,13 @@
 <?php
 
 $GLOBALS['BE_MOD']['system']['security_checker'] = [
-    'icon'          => 'bundles/oneupsecuritychecker/images/security-checker.png',
-    'stylesheet'    => 'bundles/oneupsecuritychecker/css/security-checker.css',
-    'callback'      => 'Oneup\Bundle\SecurityCheckerBundle\Module\Backend\SecurityCheckerModule',
+    'icon'          => 'bundles/oneupcontaosecuritychecker/images/security-checker.png',
+    'stylesheet'    => 'bundles/oneupcontaosecuritychecker/css/security-checker.css',
+    'callback'      => 'Oneup\Bundle\ContaoSecurityCheckerBundle\Module\Backend\SecurityCheckerModule',
 ];
 
-if (System::getContainer()->getParameter('oneup_security_checker.enable_cron')) {
-    $cronCycle = System::getContainer()->getParameter('oneup_security_checker.cron_cycle');
+if (System::getContainer()->getParameter('oneup_contao_security_checker.enable_cron')) {
+    $cronCycle = System::getContainer()->getParameter('oneup_contao_security_checker.cron_cycle');
 
-    $GLOBALS['TL_CRON'][$cronCycle][] = ['oneup_security_checker.audit_cron_job', 'run'];
+    $GLOBALS['TL_CRON'][$cronCycle][] = ['oneup_contao_security_checker.audit_cron_job', 'run'];
 }

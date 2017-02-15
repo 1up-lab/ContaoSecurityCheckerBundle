@@ -1,11 +1,11 @@
 <?php
 
-namespace Oneup\Bundle\SecurityCheckerBundle\EventListener;
+namespace Oneup\Bundle\ContaoSecurityCheckerBundle\EventListener;
 
 use Contao\Environment;
 use Contao\StringUtil;
 use Contao\Config;
-use Oneup\Bundle\SecurityCheckerBundle\Event\SecurityAuditEvent;
+use Oneup\Bundle\ContaoSecurityCheckerBundle\Event\SecurityAuditEvent;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Translation\TranslatorInterface;
@@ -73,7 +73,7 @@ class NotificationListener
         $message->setTo($this->email);
         $message->setSubject($this->translator->trans('mail.subject.'.$transKey, ['%host%' => \Idna::decode(Environment::get('host'))]));
         $message->setBody(
-            $this->templating->render('OneupSecurityCheckerBundle:Mail:mail.html.twig', [
+            $this->templating->render('OneupContaoSecurityCheckerBundle:Mail:mail.html.twig', [
                 'isVulnerable' => $audit->isVulnerable(),
                 'vulnerabilities' => $audit->getVulnerabilities(),
                 'request' => $this->request,
