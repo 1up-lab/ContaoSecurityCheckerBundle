@@ -36,7 +36,7 @@ Perform the following steps to install and use the basic functionality of the On
 
 Add OneupUploaderBundle to your composer.json using the following construct:
 
-    $ composer require oneup/contao-security-checker-bundle "^0.1"
+    $ composer require oneup/contao-security-checker-bundle "^0.3"
 
 Composer will install the bundle to your project's ``vendor/oneup/contao-security-checker-bundle`` directory.
 
@@ -64,7 +64,7 @@ Add this little configuration to your `app/config/config.yml` and adjust it to y
 ```yaml
 # app/config/config.yml
 
-# Oneup SecurityChecker configuration
+# OneupContaoSecurityChecker configuration
 oneup_contao_security_checker:
     enable_notifications: true
     suppress_manual_audits: false
@@ -81,7 +81,7 @@ Upgrade Notes
 License
 -------
 
-This bundle is under the MIT license. See the complete license in the bundle:
+This bundle is under the MIT license. See the complete license in the bundle.
 
 
 Reporting an issue or a feature request
