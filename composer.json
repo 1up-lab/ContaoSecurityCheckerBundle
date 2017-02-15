@@ -36,6 +36,6 @@
     "phpunit/phpunit": "~3.7"
   },
   "autoload":     {
-    "psr-4": { "Oneup\\Bundle\\SecurityCheckerBundle\\": "" }
+    "psr-4": { "Oneup\\Bundle\\ContaoSecurityCheckerBundle\\": "" }
   }
 }
