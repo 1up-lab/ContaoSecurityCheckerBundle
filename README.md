@@ -61,11 +61,11 @@ Enable the bundles api route:
 
 ``` yml
 
-// app/config/routing.yml
+# app/config/routing.yml
 
 oneup_contao_security_checker:
     resource: "@OneupContaoSecurityCheckerBundle/Resources/config/routing.yml"
-// ...
+# ...
 ```
 
 ### Step 3: Configure the bundle
