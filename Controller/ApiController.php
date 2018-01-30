@@ -6,6 +6,7 @@ use Oneup\Bundle\ContaoSecurityCheckerBundle\DependencyInjection\Configuration;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class ApiController extends Controller
@@ -17,7 +18,7 @@ class ApiController extends Controller
         $composerFile = sprintf('%s/../composer.lock', $this->getParameter('kernel.root_dir'));
 
         if (!$apiEnabled) {
-            throw new NotFoundHttpException('Api is not enabled');
+            throw new NotFoundHttpException('API is not enabled');
         }
 
         if ($request->headers->get('authorization-token') === $apiToken) {
@@ -32,7 +33,7 @@ class ApiController extends Controller
             }
 
         } else {
-            throw new NotFoundHttpException('None/incorrect API token provided.');
+            throw new AccessDeniedHttpException('API token mismatch.');
         }
 
     }
