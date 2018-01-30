@@ -1,0 +1,7 @@
+oneup_contao_security_checker:
+    path: /api
+    defaults:
+        _controller: Oneup\Bundle\ContaoSecurityCheckerBundle\Controller\ApiController::apiAction
+    methods:
+        - GET
+        

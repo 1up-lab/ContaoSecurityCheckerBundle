@@ -57,6 +57,17 @@ public function registerBundles()
 }
 ```
 
+Enable the bundles api route:
+
+``` yml
+
+# app/config/routing.yml
+
+oneup_contao_security_checker:
+    resource: "@OneupContaoSecurityCheckerBundle/Resources/config/routing.yml"
+# ...
+```
+
 ### Step 3: Configure the bundle
 
 Add this little configuration to your `app/config/config.yml` and adjust it to your needs.
@@ -72,6 +83,8 @@ oneup_contao_security_checker:
     notification_email: your@email.here
     cron_cycle: daily
     enable_cron: true
+    enable_api: true
+    api_key: YOUR_TOKEN_HERE
 ```
 
 Upgrade Notes
