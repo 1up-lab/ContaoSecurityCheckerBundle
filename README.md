@@ -90,7 +90,7 @@ oneup_contao_security_checker:
 
 Upgrade Notes
 -------------
-* Version **0.4.0** Added an API endpoint, per default disabled (see #7)
+* Version **0.4.0** Added an API endpoint, per default disabled (see [#7](https://github.com/1up-lab/ContaoSecurityCheckerBundle/pull/7))
 * Version **0.3.0** Added Contao Manager Plugin
 * Version **0.2.0** Renamed Bundle (update/check your `app/config/config.yml`)
 * Version **0.1.0** Initial release
