@@ -8,29 +8,31 @@
         <?php else: ?>
         <p class="tl_error" style="margin-bottom:9px;"><?php echo $this->auditFailed; ?><sup><strong>*</strong></sup></p>
 
-        <table class="tl_listing">
-            <?php foreach ($this->vulnerabilities as $vulnerability): ?>
-            <tr>
-                <td colspan="2" class="tl_folder_tlist">
-                    <?php echo $vulnerability['name']; ?>
-                    <span class="tl_gray"><?php echo $vulnerability['version']; ?></span>
-                </td>
-            </tr>
-            <?php foreach ($vulnerability['advisories'] as $advisory): ?>
-            <tr class="even">
-                <td class="tl_file_list">
-                    <?php if (strlen($advisory['cve']) > 0): ?>
-                    <span class="tl_gray"><?php echo $advisory['cve']; ?></span>
-                    <?php endif; ?>
-                    <?php echo $advisory['title']; ?>
-                </td>
-                <td class="tl_file_list tl_right_nowrap">
-                    <a href="<?php echo $advisory['link']; ?>" target="_blank" class="show"><img src="system/themes/flexible/icons/show.svg" width="14" height="16" alt="Open"></a>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-            <?php endforeach; ?>
-        </table>
+        <div class="tl_listing_container list_view" id="tl_listing">
+            <table class="tl_listing">
+                <?php foreach ($this->vulnerabilities as $vulnerability): ?>
+                <tr>
+                    <td colspan="2" class="tl_folder_tlist">
+                        <?php echo $vulnerability['name']; ?>
+                        <span class="tl_gray"><?php echo $vulnerability['version']; ?></span>
+                    </td>
+                </tr>
+                <?php foreach ($vulnerability['advisories'] as $advisory): ?>
+                <tr class="even">
+                    <td class="tl_file_list">
+                        <?php if (strlen($advisory['cve']) > 0): ?>
+                        <span class="tl_gray"><?php echo $advisory['cve']; ?></span>
+                        <?php endif; ?>
+                        <?php echo $advisory['title']; ?>
+                    </td>
+                    <td class="tl_file_list tl_right_nowrap">
+                        <a href="<?php echo $advisory['link']; ?>" target="_blank" class="show"><img src="system/themes/flexible/icons/show.svg" width="14" height="16" alt="Open"></a>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+                <?php endforeach; ?>
+            </table>
+        </div>
         <?php endif; ?>
     </div>
     <?php else: ?>
@@ -39,7 +41,7 @@
     </div>
     <?php endif; ?>
 
-    <div class="tl_message" style="margin-top:0;margin-bottom:9px;">
+    <div class="tl_message">
         <p class="tl_help"><sup><strong>*</strong></sup> <?php echo html_entity_decode($this->disclaimer); ?></p>
     </div>
 
