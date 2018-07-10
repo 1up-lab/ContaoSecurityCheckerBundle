@@ -1,46 +1,56 @@
 {
-  "name":"oneup/contao-security-checker-bundle",
-  "description":"This check works by comparing the composer.lock against an open vulnerability database. A clean check does not mean there are absolutely no security problems whatsoever.",
-  "keywords":["contao", "security", "bundle", "modules", "extensions", "check"],
-  "type":"contao-bundle",
-  "homepage":"http://1up.io",
-  "license":"MIT",
-  "authors":[
+  "name": "oneup/contao-security-checker-bundle",
+  "type": "contao-bundle",
+  "description": "This check works by comparing the composer.lock against an open vulnerability database. A clean check does not mean there are absolutely no security problems whatsoever.",
+  "keywords": [
+    "contao",
+    "security",
+    "bundle",
+    "modules",
+    "extensions",
+    "check"
+  ],
+  "homepage": "http://1up.io",
+  "license": "MIT",
+  "authors": [
     {
-      "name":"David Greminger",
-      "email":"dg@1up.io",
-      "homepage":"http://1up.io",
-      "role":"Developer"
+      "name": "David Greminger",
+      "email": "dg@1up.io",
+      "homepage": "http://1up.io",
+      "role": "Developer"
     },
     {
-      "name":"Jim Schmid",
-      "email":"js@1up.io",
-      "homepage":"http://1up.io",
-      "role":"Developer"
+      "name": "Jim Schmid",
+      "email": "js@1up.io",
+      "homepage": "http://1up.io",
+      "role": "Developer"
     }
   ],
-  "support":{
-    "email":"hello@1up.io",
-    "issues":"https://github.com/1up-lab/ContaoSecurityCheckerBundle/issues",
-    "irc":"irc://irc.freenode.org/contao.dev",
-    "source":"https://github.com/1up-lab/ContaoSecurityCheckerBundle"
-  },
   "require": {
-    "php":" ^7.1",
-    "symfony/symfony": "~3.0|~4.0",
-    "contao/core-bundle":"^4.2",
-    "sensiolabs/security-checker": "~3.0|~4.0",
-    "doctrine/cache": "^1.6"
-
+    "php": "^7.1",
+    "contao/core-bundle": "^4.4",
+    "doctrine/cache": "^1.6",
+    "sensiolabs/security-checker": "^3.0 | ^4.0",
+    "symfony/symfony": "^3.0 | ^4.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "~3.7",
     "contao/manager-plugin": "^2.0"
   },
-  "autoload":     {
-    "psr-4": { "Oneup\\Bundle\\ContaoSecurityCheckerBundle\\": "" }
+  "config": {
+    "sort-packages": true
   },
   "extra": {
     "contao-manager-plugin": "Oneup\\Bundle\\ContaoSecurityCheckerBundle\\ContaoManager\\Plugin"
+  },
+  "autoload": {
+    "psr-4": {
+      "Oneup\\Bundle\\ContaoSecurityCheckerBundle\\": ""
+    }
+  },
+  "support": {
+    "email": "hello@1up.io",
+    "issues": "https://github.com/1up-lab/ContaoSecurityCheckerBundle/issues",
+    "irc": "irc://irc.freenode.org/contao.dev",
+    "source": "https://github.com/1up-lab/ContaoSecurityCheckerBundle"
   }
 }
