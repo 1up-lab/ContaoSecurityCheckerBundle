@@ -25,7 +25,7 @@ class SecurityCheckerModule extends BackendModule
     {
         $this->container = $this->getContainer();
         $this->translator = $this->container->get('translator');
-        $tokenManager = $this->container->get('security.csrf.token_manager');
+        $tokenManager = $this->container->get('contao.csrf.token_manager');
         $this->requestToken = $tokenManager->getToken($this->container->getParameter('contao.csrf_token_name'))->getValue();
 
         parent::__construct();
