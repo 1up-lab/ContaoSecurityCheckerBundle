@@ -36,7 +36,7 @@ Perform the following steps to install and use the basic functionality of the On
 
 Add OneupUploaderBundle to your composer.json using the following construct:
 
-    $ composer require oneup/contao-security-checker-bundle "^0.3"
+    $ composer require oneup/contao-security-checker-bundle "^0.4"
 
 Composer will install the bundle to your project's ``vendor/oneup/contao-security-checker-bundle`` directory.
 
