@@ -7,7 +7,7 @@ use Symfony\Component\EventDispatcher\Event;
 
 class SecurityAuditEvent extends Event
 {
-    const NAME = 'oneup_contao_security_checker.audit';
+    public const NAME = 'oneup_contao_security_checker.audit';
 
     protected $audit;
 

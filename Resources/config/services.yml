@@ -1,6 +1,7 @@
 
 services:
     oneup_contao_security_checker.security_checker:
+        public: true
         class: Oneup\Bundle\ContaoSecurityCheckerBundle\Checker\SecurityChecker
         arguments:
             - '@event_dispatcher'

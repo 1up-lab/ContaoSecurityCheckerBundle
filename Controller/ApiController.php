@@ -28,13 +28,10 @@ class ApiController extends Controller
 
                 return new JsonResponse($response);
             }
-            else {
-                throw new NotFoundHttpException('No composer.lock file found on server.');
-            }
 
-        } else {
-            throw new AccessDeniedHttpException('API token mismatch.');
+            throw new NotFoundHttpException('No composer.lock file found on server.');
         }
 
+        throw new AccessDeniedHttpException('API token mismatch.');
     }
 }

@@ -16,7 +16,7 @@ class Plugin implements BundlePluginInterface
     public function getBundles(ParserInterface $parser)
     {
         return [
-            (new BundleConfig(OneupContaoSecurityCheckerBundle::class))->setLoadAfter([ContaoCoreBundle::class])
+            (new BundleConfig(OneupContaoSecurityCheckerBundle::class))->setLoadAfter([ContaoCoreBundle::class]),
         ];
     }
 }

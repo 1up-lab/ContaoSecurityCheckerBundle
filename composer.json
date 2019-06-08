@@ -27,6 +27,7 @@
     }
   ],
   "require": {
+    "ext-json": "*",
     "php": "^7.1",
     "contao/core-bundle": "^4.5",
     "doctrine/cache": "^1.6",

@@ -34,7 +34,7 @@ class SecurityCheckerModule extends BackendModule
     public function compile()
     {
         $this->Template->content = '';
-        $this->Template->href = $this->getReferer(true);
+        $this->Template->href = self::getReferer(true);
         $this->Template->title = specialchars($GLOBALS['TL_LANG']['MSC']['backBTTitle']);
         $this->Template->button = $GLOBALS['TL_LANG']['MSC']['backBT'];
         $this->Template->content = $this->run();
@@ -56,7 +56,7 @@ class SecurityCheckerModule extends BackendModule
             $audit = $securityChecker->getCachedAudit();
         }
 
-        if (Input::post('run') != '') {
+        if ('' !== Input::post('run')) {
             // Perform an actual check against the web service and cache the result afterwards
             $audit = $securityChecker->run();
         }
