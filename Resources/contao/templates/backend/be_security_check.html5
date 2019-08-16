@@ -41,7 +41,7 @@
     </div>
     <?php endif; ?>
 
-    <div class="tl_message">
+    <div class="tl_info">
         <p class="tl_help"><sup><strong>*</strong></sup> <?php echo html_entity_decode($this->disclaimer); ?></p>
     </div>
 
