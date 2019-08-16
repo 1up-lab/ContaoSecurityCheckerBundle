@@ -4,9 +4,9 @@
     <?php if ($this->hasRunOnce): ?>
     <div class="tl_message">
         <?php if (!$this->isVulnerable): ?>
-        <p class="tl_confirm" style="margin-bottom:9px;"><?php echo $this->auditOk; ?><sup><strong>*</strong></sup></p>
+        <p class="tl_confirm"><?php echo $this->auditOk; ?><sup><strong>*</strong></sup></p>
         <?php else: ?>
-        <p class="tl_error" style="margin-bottom:9px;"><?php echo $this->auditFailed; ?><sup><strong>*</strong></sup></p>
+        <p class="tl_error"><?php echo $this->auditFailed; ?><sup><strong>*</strong></sup></p>
 
         <div class="tl_listing_container list_view" id="tl_listing">
             <table class="tl_listing">
